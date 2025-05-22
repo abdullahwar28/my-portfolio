@@ -167,7 +167,8 @@ nav a:hover {
   margin-bottom: calc(2.5rem * 1.5);
 }
 #projects h3 {
-  color: var(--darkgreen);
+  color: white;
+  padding: 1rem;
 }
 #projects h4 {
   font-size: 1rem;
@@ -192,18 +193,18 @@ nav a:hover {
   gap: 1rem;
   font-size: 1rem;
 }
-/* Update the #projects img rule to make the image smaller and aligned to the left */
+/*
 #projects img {
   margin: 2rem 0 4rem 0;
   border-left: 1px solid var(--darkgreen);
   border-top: 1px solid var(--darkgreen);
   border-radius: 25px;
   padding: 1rem;
-  width: 60%; /* Reduce the image width to make it smaller (adjust as needed) */
-  max-width: 300px; /* Set a max-width to keep it from getting too large */
-  display: block; /* Ensure the image behaves as a block element */
+  width: 60%; 
+  max-width: 300px; 
+  display: block; 
 }
-
+*/
 /* Ensure the grid layout aligns content properly */
 @media (min-width: 550px) {
   article {
