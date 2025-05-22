@@ -1,0 +1,264 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+  --darkgreen: #146152;
+  --green: #44803f;
+  --lightgreen: #b4cf66;
+  --yellow: #ffec5c;
+  --orange: #ff5a33;
+  --lightorange: #eb9834;
+  --aqua: #86fbfb;
+  --white: #f7f8fa;
+  --gold: #d4a017;
+  --font-size: 1.3rem;
+  --mono: "Oxygen mono", monospace;
+  --sans: Oxygen, sans-serif;
+}
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--darkgreen);
+  color: white;
+  font-size: var(--font-size);
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+a {
+  color: var(--aqua);
+}
+a:hover {
+  color: var(--lightgreen);
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+
+/* background color divs */
+.section-orange {
+  background-color: #ff7043;
+}
+.section-green {
+  background-color: #11613e;
+}
+.gradient {
+  background: #a31b07;
+  background: linear-gradient(
+    90deg,
+    rgba(163, 27, 7, 1) 0%,
+    rgba(255, 153, 153, 1) 0%
+  );
+  height: 2px;
+}
+
+/* intro styles */
+
+#intro {
+  padding: 4rem 1rem 10rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+#intro .name {
+  font-family: var(--mono);
+}
+.name span {
+  font-family: var(--sans);
+  font-size: 4rem;
+  color: var(--orange);
+  display: block;
+}
+#intro h2 {
+  font-size: 4rem;
+  font-weight: normal;
+}
+
+/* contact section */
+
+#contact {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3rem 0;
+  color: black;
+}
+#contact p:last-child {
+  margin-top: 3rem;
+}
+
+/* navbar */
+
+nav {
+  font-family: var(--mono);
+  font-size: 80%;
+  padding: 1rem;
+}
+
+nav h1 a {
+  font-family: var(--sans);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+nav [class*="fa-"] {
+  font-size: 150%;
+  color: var(--aqua);
+}
+nav [class*="fa-"]:hover {
+  color: var(--lightgreen);
+}
+nav h1 [class*="fa-"] {
+  font-size: 100%;
+  color: var(--aqua);
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+nav a:hover {
+  color: var(--lightgreen);
+}
+.button {
+  background-color: #26a69a;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: var(--mono);
+}
+.button:hover {
+  color: var(--aqua);
+  background-color: #4db6ac;
+}
+/* projects section */
+#projects {
+  padding: 4rem 1rem;
+}
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: calc(2.5rem * 1.5);
+}
+#projects h3 {
+  color: var(--darkgreen);
+}
+#projects h4 {
+  font-size: 1rem;
+  font-family: var(--mono);
+  margin: 0;
+}
+.blackbox {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+#projects ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1rem;
+}
+/* Update the #projects img rule to make the image smaller and aligned to the left */
+#projects img {
+  margin: 2rem 0 4rem 0;
+  border-left: 1px solid var(--darkgreen);
+  border-top: 1px solid var(--darkgreen);
+  border-radius: 25px;
+  padding: 1rem;
+  width: 60%; /* Reduce the image width to make it smaller (adjust as needed) */
+  max-width: 300px; /* Set a max-width to keep it from getting too large */
+  display: block; /* Ensure the image behaves as a block element */
+}
+
+/* Ensure the grid layout aligns content properly */
+@media (min-width: 550px) {
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1rem;
+    align-items: center; /* Vertically center the image and text */
+  }
+  .text {
+    order: 2;
+    text-align: right;
+  }
+  #projects img {
+    order: 1; /* Ensure the image stays on the left */
+    justify-self: start; /* Align the image to the left within its grid column */
+  }
+  #projects ul {
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+}
+
+/* footer section */
+footer {
+  text-align: center;
+  padding: 4rem 0;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 3rem;
+}
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+}
